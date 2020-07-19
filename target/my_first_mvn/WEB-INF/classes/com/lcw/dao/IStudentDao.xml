@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lcw.dao.IStudentDao">
+    <insert id="insertStudent" parameterType="com.lcw.domain.Student" >
+        insert into student(name,age,sex,studentNo,major)
+        values(#{name},#{age},#{sex},#{studentNo},#{major});
+    </insert>
+
+    <delete id="deleteById" parameterType="String">
+        delete from student where studentNo=#{studentNo};
+    </delete>
+
+    <update id="updateStudent" parameterType="com.lcw.domain.Student">
+        update student
+        set Name=#{name},age=#{age},sex=#{sex},major=#{major}
+        where studentNo=#{studentNo};
+    </update>
+
+    <select id="findAll" resultType="com.lcw.domain.Student">
+        select * from student;
+    </select>
+
+    <select id="findById" parameterType="string" resultType="com.lcw.domain.Student">
+        select * from student where studentNo=#{studentNo};
+    </select>
+
+    <select id="findByName" parameterType="String" resultType="com.lcw.domain.Student" >
+        select * from student where name=#{name};
+    </select>
+    <select id="findByIdAndName" parameterType="String" resultType="com.lcw.domain.Student" >
+        select * from student where studentNo=#{studentNo} and name=#{name};
+    </select>
+</mapper>

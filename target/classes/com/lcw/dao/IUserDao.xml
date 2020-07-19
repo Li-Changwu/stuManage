@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lcw.dao.IUserDao">
+    <select id="login" parameterType="com.lcw.domain.User" resultType="com.lcw.domain.User">
+        select *
+        from user
+        where userName=#{userName} and passWd=#{passWd};
+    </select>
+</mapper>
