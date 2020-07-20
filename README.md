@@ -8,3 +8,6 @@
 1. 根据stuManage.sql创建数据库
 2. 更换jdbc.properties的url、用户名和密码
 3. 将文件打包，并将war包传到服务器tomcat的webapps下面并开放相应端口
+
+# 待完善
+前端部分：json信息接收及页面跳转
