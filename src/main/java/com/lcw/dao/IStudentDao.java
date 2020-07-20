@@ -15,9 +15,9 @@ public interface IStudentDao {
 
     List<Student> findByIdAndName(@Param("studentNo") String studentNo,@Param("name") String name);
 
-    void insertStudent(Student student);
+    int insertStudent(Student student);
 
-    void deleteById(@Param("studentNo") String studentNo);
+    int deleteById(@Param("studentNo") String studentNo);
 
-    void updateStudent(Student student);
+    int updateStudent(Student student);
 }

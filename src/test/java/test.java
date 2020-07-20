@@ -81,15 +81,30 @@ public class test {
 
     @Test
     public void insertStudentTest(){
-        studentDao.insertStudent(new Student("李555","17","男","2018210500","信息工程"));
+        int r = 0;
+        try {
+            r = studentDao.insertStudent(new Student("李555","17","男","2018210500","信息工程"));
+        }catch (Exception e){
+            r = -1;
+        }
+        finally {
+            System.out.println(r);
+        }
     }
     @Test
     public void deleteByIdTest(){
-        studentDao.deleteById("2018210500");
+        int result = 0;
+        try {
+            result = studentDao.deleteById("2018210379");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(result);
     }
 
     @Test
     public void updateStudentTest(){
-        studentDao.updateStudent(new Student("upp","20","男", "2018210400","信息工程"));
+        int result = studentDao.updateStudent(new Student("upp","20","男", "2018210381","信息工程"));
+        System.out.println(result);
     }
 }
